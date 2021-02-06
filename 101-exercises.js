@@ -1109,7 +1109,26 @@ addToDone("Exercise 76 is correct.")
 
 // Exercise 77
 // Write a function definition named onlyPositiveEvens that takes in sequence of numbers and returns an array containing all the positive evens from the sequence
-
+function onlyPositiveEvens(sequence){
+    var posEven = [];
+    var posOdd = [];
+    var negEven = [];
+    var negOdd = [];
+    for (let i = 0; i < sequence.length; i++)
+        if (((sequence[i] >= 0) && ((sequence[i] % 2) === 0))){
+            posEven.push(sequence[i]);
+        }
+        else if ((((sequence[i] < 0) && ((sequence[i] % 2) === 1)){
+            negOdd.push(sequence[i]);
+        }
+        else if (((sequence[i] >= 0) && ((sequence[i] % 2) === 1))){
+            posOdd.push(sequence[i]);
+        }
+        else if (((sequence[i] < 0) && ((sequence[i] % 2) === 1))){
+            negEven.push(sequence[i]);
+        }
+    return posEven;
+}
 assert(onlyPositiveEvens([1, -2, 3]), [], "Exercise 77");
 assert(onlyPositiveEvens([2, -5, -6]), [2], "Exercise 77");
 assert(onlyPositiveEvens([3, 3, 4, 6]), [4, 6], "Exercise 77");
@@ -1119,7 +1138,26 @@ addToDone("Exercise 77 is correct.")
 
 // Exercise 78
 // Write a function definition named onlyPositiveOdds that takes in sequence of numbers and returns an array containing all the positive odd numbers from the sequence
-
+function onlyPositiveOdds(sequence){
+    var posEven = [];
+    var posOdd = [];
+    var negEven = [];
+    var negOdd = [];
+    for (let i = 0; i < sequence.length; i++)
+        if (((sequence[i] >= 0) && ((sequence[i] % 2) === 0))){
+            posEven.push(sequence[i]);
+        }
+        else if ((((sequence[i] < 0) && ((sequence[i] % 2) === 1)){
+            negOdd.push(sequence[i]);
+        }
+        else if (((sequence[i] >= 0) && ((sequence[i] % 2) === 1))){
+            posOdd.push(sequence[i]);
+        }
+        else if (((sequence[i] < 0) && ((sequence[i] % 2) === 1))){
+            negEven.push(sequence[i]);
+        }
+    return posOdd;
+}
 assert(onlyPositiveOdds([1, -2, 3]), [1, 3], "Exercise 78");
 assert(onlyPositiveOdds([2, -5, -6]), [], "Exercise 78");
 assert(onlyPositiveOdds([3, 3, 4, 6]), [3, 3], "Exercise 78");
@@ -1129,7 +1167,26 @@ addToDone("Exercise 78 is correct.")
 
 // Exercise 79
 // Write a function definition named onlyNegativeEvens that takes in sequence of numbers and returns an array containing all the negative even numbers from the sequence
-
+function onlyNegativeEvens(sequence){
+    var posEven = [];
+    var posOdd = [];
+    var negEven = [];
+    var negOdd = [];
+    for (let i = 0; i < sequence.length; i++)
+        if (((sequence[i] >= 0) && ((sequence[i] % 2) === 0))){
+            posEven.push(sequence[i]);
+        }
+        else if ((((sequence[i] < 0) && ((sequence[i] % 2) === 1)){
+            negOdd.push(sequence[i]);
+        }
+        else if (((sequence[i] >= 0) && ((sequence[i] % 2) === 1))){
+            posOdd.push(sequence[i]);
+        }
+        else if (((sequence[i] < 0) && ((sequence[i] % 2) === 1))){
+            negEven.push(sequence[i]);
+        }
+    return negEven;
+}
 assert(onlyNegativeEvens([1, -2, 3]), [-2], "Exercise 79");
 assert(onlyNegativeEvens([2, -5, -6]), [-6], "Exercise 79");
 assert(onlyNegativeEvens([3, 3, 4, 6]), [], "Exercise 79");
@@ -1139,7 +1196,26 @@ addToDone("Exercise 79 is correct.")
 
 // Exercise 80
 // Write a function definition named onlyNegativeOdds that takes in sequence of numbers and returns an array containing all the negative odd numbers from the sequence
-
+function onlyNegativeOdds(sequence){
+    var posEven = [];
+    var posOdd = [];
+    var negEven = [];
+    var negOdd = [];
+    for (let i = 0; i < sequence.length; i++)
+        if (((sequence[i] >= 0) && ((sequence[i] % 2) === 0))){
+            posEven.push(sequence[i]);
+        }
+        else if ((((sequence[i] < 0) && ((sequence[i] % 2) === 1)){
+            negOdd.push(sequence[i]);
+        }
+        else if (((sequence[i] >= 0) && ((sequence[i] % 2) === 1))){
+            posOdd.push(sequence[i]);
+        }
+        else if (((sequence[i] < 0) && ((sequence[i] % 2) === 1))){
+            negEven.push(sequence[i]);
+        }
+    return negOdd;
+}
 assert(onlyNegativeOdds([1, -2, 3]), [], "Exercise 80");
 assert(onlyNegativeOdds([2, -5, -6]), [-5], "Exercise 80");
 assert(onlyNegativeOdds([3, 3, 4, 6]), [], "Exercise 80");
