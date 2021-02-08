@@ -1253,7 +1253,15 @@ addToDone("Exercise 82 is correct.")
 
 // Exercise 83
 // Write a function definition named getUniqueValues that takes in an array and returns an array with only the unique values from that array.
+function getUniqueValues(sequence){
+    sequence = sequence.sort()
+    for (let i = 0; i < sequence.length; i++)
+        if (sequence[i] === sequence[i+1]){
+            sequnece.pop(i);
+        }
+    return sequence;
 
+}
 assert(getUniqueValues(["ant", "ant", "mosquito", "mosquito", "ladybug"]), ["ant", "mosquito", "ladybug"], "Exercise 83");
 assert(getUniqueValues(["b", "a", "n", "a", "n", "a", "s"]), ["b", "a", "n", "s"], "Exercise 83");
 assert(getUniqueValues(["mary", "had", "a", "little", "lamb", "little", "lamb", "little", "lamb"]), ["mary", "had", "a", "little", "lamb"], "Exercise 83");
@@ -1262,6 +1270,12 @@ addToDone("Exercise 83 is correct.")
 
 // Exercise 84
 // Write a function definition named elementsTimesTwo that takes in an array of numbers and returns an array with each value multiplied by 2.
+function elementsTimesTwo(sequence) {
+    var timesTwo = []
+    for (let i = 0; i < sequence.length; i++)
+        timesTwo.push((sequence[i] * 2));
+    return timesTwo;
+}
 
 
 assert(elementsTimesTwo([1, 2, 3]), [2, 4, 6], "Exercise 84")
@@ -1272,7 +1286,10 @@ addToDone("Exercise 84 is correct.")
 
 // Exercise 85
 // Write a function named flatten that takes in an array of arrays. Return the flattened array.
-
+function flatten(sequence){
+    sequnece = sequence.flat(1);
+    return sequence;
+}
 
 assert(flatten([[1, 2], [3, 4], [5, 6]]), [1, 2, 3, 4, 5, 6], "Exercise 85");
 assert(flatten([[1, 2, 3], [1, 2, 3], [1, 2, 3]]), [1, 2, 3, 1, 2, 3, 1, 2, 3], "Exercise 85");
@@ -1283,6 +1300,12 @@ addToDone("Exercise 85 is correct.")
 
 // Exercise 86
 // Write a function definition named addOneToArray that adds one to every number in an array
+function addOneToArray(sequence) {
+    var addOne = []
+    for (let i = 0; i < sequence.length; i++)
+        timesTwo.push((sequence[i] + 1));
+    return addOne;
+}
 
 assert(addOneToArray([1, 2, 3]), [2, 3, 4], "Exercise 86");
 assert(addOneToArray([4, 4, 4]), [5, 5, 5], "Exercise 86");
