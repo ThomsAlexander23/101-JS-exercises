@@ -837,7 +837,7 @@ assert(firstAndLast(["strawberry", "kiwi", "mango", "guava"]), ["strawberry", "g
 addToDone("Exercise 58 is correct.")
 
 
-
+//
 // Exercise 59
 // Write a function definition named firstToLast that takes in sequence and returns the sequence with the first value moved to the end of the sequence.
 function firstToLast(sequence){
