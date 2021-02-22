@@ -1421,7 +1421,13 @@ addToDone("Exercise 91 is complete.")
 
 // Exercise 92
 // Write a function named totalOfBookPrices that takes in a array of objects and returns the sum total of all the book prices added together
-
+function totalOfBookPrices(object){
+    var price = 0;
+    for (let i = 0; i < books.length; i++){
+        price += books[i].price;
+    }
+    return price
+}
 assert(totalOfBookPrices(books), 122.9, "Exercise 92")
 addToDone("Exercise 92 is complete.")
 
