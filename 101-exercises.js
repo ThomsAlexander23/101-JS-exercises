@@ -213,7 +213,7 @@ addToDone("Exercise 11 is correct.")
 // Is zero itself positive? What about infinity? What about negative infinity?
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#relational_operators for guidance with JS comparison operators.
 function isPositive(number) {
-    return (number = (number >= 0));
+    return (number > 0);
 }
 assert(isPositive(0.25), true, "Exercise 12");
 assert(isPositive(0.00001), true, "Exercise 12");
@@ -243,7 +243,7 @@ addToDone("Exercise 13 is correct.")
 // Exercise 14
 // Write a function definition named isOdd that takes in a number and returns true or false if that number is odd.
 function isOdd(number){
-    return (number = ((number % 2) === 1));
+    return ((number % 2) === 1) || ((number % 2) === -1);
 }
 assert(isOdd(positiveOddNumber), true, "Exercise 14");
 assert(isOdd(positiveEvenNumber), false, "Exercise 14");
