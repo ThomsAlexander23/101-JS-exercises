@@ -1538,7 +1538,19 @@ addToDone("Exercise 96 is complete")
 // Exercise 97
 // Write a function named numberOfItemTypes that takes in the shopping cart as input and returns the number of unique item types in the shopping cart. 
 // We're not yet using the quantity of each item, but rather focusing on determining how many different types of items are in the cart.
-
+function numberOfItemTypes(object){
+    var unique = [];
+    for (let i = 0; i < (object.items).length; i++){
+        unique.push(object[1][i][0])
+    }
+    unique.sort()
+    for (let i = 0; i < unique.length; i++){
+        if ((i > 0) && (unique[i] === unique[i-1])){
+            unique.pop(i);
+        }
+    }
+    return unique
+}
 assert(numberOfItemTypes(shoppingCart), 5, "Exercise 97");
 addToDone("Exercise 97 is complete.")
 
