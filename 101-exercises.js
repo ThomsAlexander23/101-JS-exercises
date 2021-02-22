@@ -1423,8 +1423,8 @@ addToDone("Exercise 91 is complete.")
 // Write a function named totalOfBookPrices that takes in a array of objects and returns the sum total of all the book prices added together
 function totalOfBookPrices(object){
     var price = 0;
-    for (let i = 0; i < books.length; i++){
-        price += books[i].price;
+    for (let i = 0; i < object.length; i++){
+        price += object[i].price;
     }
     return price
 }
@@ -1434,7 +1434,13 @@ addToDone("Exercise 92 is complete.")
 
 // Exercise 93
 // Write a function named getAverageBookPrice that takes in a array of objects and returns the average book price.
-
+function getAverageBookPrice(object){
+    var price = 0 ;
+    for (let i = 0 ; i < object.length; i++){
+        price += object[i].price;
+    }
+    return (price / object.length)
+}
 assert(getAverageBookPrice(books), 30.725, "Exercise 93");
 addToDone("Exercise 93 is complete.")
 
