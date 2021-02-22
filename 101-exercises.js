@@ -31,7 +31,7 @@ function addToDone(message) {
 // The line below creates the variable named doingJSRightNow and assigns the boolean value true
 // To complete Exercise #0, uncomment the following line of JS
 // var doingJSRightNow = true
-
+var doingJSRightNow = true;
 // The lines below will test your answer. If you see an error, then it means that your answer is incorrect or incomplete.
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_defined to understand this error message.
 assert(doingJSRightNow, true, "Exercise 0"); 
@@ -70,7 +70,7 @@ addToDone("Exercise 4 is correct.");
 // Exercise 5
 // Add the string "tomato" to the end of the fruits array. 
 // *Hint* Recommend finding and using a built-in JS operation to add to an array rather than recreating the array.
-fruits = fruits.push("tomato");
+fruits.push("tomato");
 assert(fruits, ["mango", "banana", "guava", "kiwi", "strawberry", "tomato"], "Exercise 5");
 addToDone("Exercise 5 is correct");
 
@@ -78,7 +78,7 @@ addToDone("Exercise 5 is correct");
 // add the string "tomato" onto the end of the vegetables array. 
 // Recommend using the built-in JS operation to add to an array.
 
-vegetables = vegetables.push("tomtato");
+vegetables.push("tomato");
 assert(vegetables,["eggplant", "broccoli", "carrot", "cauliflower", "zucchini", "tomato"], "Exercise 6");
 addToDone("Exercise 6 is correct")
 
@@ -112,7 +112,7 @@ addToDone("Exercise 9 is correct.")
 // Write the code necessary to produce a single array that holds all fruits then all vegetables in the order as they were sorted above.
 // Assign the result to a variable named fruitsAndVeggies. 
 // *hint* the search engine search here would be "how to combine two arrays in JavaScript", for example.
-fruitsAndVeggies = fruits.concat(veggies);
+var fruitsAndVeggies = fruits.concat(vegetables);
 assert(fruitsAndVeggies, ['tomato', 'strawberry', 'mango', 'kiwi', 'guava', 'banana', 'broccoli', 'carrot', 'cauliflower', 'eggplant', 'tomato', 'zucchini'], "Exercise 10")
 addToDone("Exercise 10 is correct")
 
@@ -888,7 +888,7 @@ addToDone("Exercise 61 is correct.")
 function median(sequence){
     var mid = ((Math.floor(senquence.sort).length)/ 2)
     var med = 
-    (sequence.length % 0) ?  sequence[mid] = med : (((sequence[mid]) + (sequence[mid - 1]))/ 2) = med;
+    (sequence.length % 0) ?  med = sequence[mid] : med = (((sequence[mid]) + (sequence[mid - 1]))/ 2);
     return med;
 }
 assert(median([1, 2, 3, 4, 5]), 3.0, "Exercise 62");
