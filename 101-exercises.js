@@ -1374,7 +1374,9 @@ addToDone("Exercise 89 is complete.")
 
 // Exercise 90
 // Write a function named getBookAuthor that takes in a object (the above declared book variable) and returns the author's name
-
+function getBookAuthor(object){
+    return object.values(object.author);
+}
 
 assert(getBookAuthor(book), "Frances Buontempo", "Exercise 90");
 addToDone("Exercise 90 is complete.")
