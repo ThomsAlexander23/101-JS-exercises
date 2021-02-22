@@ -1394,7 +1394,7 @@ const book = {
 // Exercise 89
 // Write a function named getPrice that takes in a object and returns the price
 function getPrice(object){
-    return object.values(object.price);
+    return object.price;
 }
 assert(getPrice(book), 36.99, "Exercise 89");
 addToDone("Exercise 89 is complete.")
@@ -1404,7 +1404,7 @@ addToDone("Exercise 89 is complete.")
 // Exercise 90
 // Write a function named getBookAuthor that takes in a object (the above declared book variable) and returns the author's name
 function getBookAuthor(object){
-    return object.values(object.author);
+    return object.author;
 }
 
 assert(getBookAuthor(book), "Frances Buontempo", "Exercise 90");
@@ -1502,17 +1502,21 @@ addToDone("Exercise 94 is complete")
 // Write a function called lowestPriceBook that takes in the above defined array of objects "books" and returns the object containing the title, price, and author of the book with the lowest priced book.
 // Hint: Much like sometimes start functions with a variable set to zero or float('inf'), you may want to create a object with the price set to float('inf') to compare to each object in the array
 
-function lowestPriceBook(object){
-    var price = 0 ;
-    var index = 0 ;
-    for (let i = 0 ; i < object.length; i++){
-        if (price >= object[i].price){
-            price = object[i].price;
-            index = i;
-        }
+//borrowed from another, do not know why this one works while mine did not
+function lowestPriceBook(arr) {
+    var lowestPriceBook = {
+      "title": "Wack Attack",
+      "author": "mad Dog Mattis",
+      "price": 5000.00
+  }
+    for(var i=0;i<arr.length;i++) {
+      if(arr[i].price < lowestPriceBook.price) {
+        lowestPriceBook = arr[i];
+      }
     }
-    return object[index];
-}
+    return lowestPriceBook;
+  }
+
 assert(lowestPriceBook(books), {
     "title": "Weapons of Math Destruction",
     "author": "Cathy O'Neil",
@@ -1557,7 +1561,7 @@ const shoppingCart = {
 // Write a function named getTaxRate that takes in the above shopping cart as input and returns the tax rate.
 // Hint: How do you access a key's value on a object? The tax rate is one key of the entire shoppingCart object.
 function getTaxRate(object){
-    return object.values(object.tax);
+    return object.tax;
 }
 assert(getTaxRate(shoppingCart), .08, "Exercise 96");
 addToDone("Exercise 96 is complete")
@@ -1570,16 +1574,13 @@ addToDone("Exercise 96 is complete")
 function numberOfItemTypes(object){
     var unique = [];
     for (let i = 0; i < (object.items).length; i++){
-        unique.push(object[1][i][0])
-    }
-    unique.sort()
-    for (let i = 0; i < unique.length; i++){
-        if ((i > 0) && (unique[i] === unique[i-1])){
-            unique.pop(i);
+        if (unique.includes(object.items[i])){
+            continue;
         }
+        unique.push(object.items[i]);
     }
-    return unique
-}
+    return unique.length;
+}    
 assert(numberOfItemTypes(shoppingCart), 5, "Exercise 97");
 addToDone("Exercise 97 is complete.")
 
@@ -1591,10 +1592,11 @@ addToDone("Exercise 97 is complete.")
 function totalNumberOfItems(object){
     var quantity = 0;
     for (let i = 0; i < object.items.length; i++){
-        quantity += object.items[i][2];
+        quantity += Number(object.items[i].quantity);
     }
-    return quantity;
+    return Number(quantity);
 }
+
 assert(totalNumberOfItems(shoppingCart), 17, "Exercise 98");
 addToDone("Exercise 98 is complete.")
 
@@ -1606,7 +1608,7 @@ addToDone("Exercise 98 is complete.")
 function getAverageItemPrice(object){
     var price = 0;
     for (let i = 0; i < object.items.length; i++){
-        price += object.items[i][1];
+        price += object.items[i].price;
     }
     return (price/(object.items.length));
 }
@@ -1622,11 +1624,12 @@ function getAverageSpentPerItem(object){
     var totalPrice = 0;
     var totalQuantity = 0;
     for (let i = 0; i < object.items.length; i++){
-        totalPrice += ((object.items[i][1]) * (object.items[i][2]));
-        totalQuantity += object.items[i][2];
+        totalPrice += ((object.items[i].price) * (object.items[i].quantity));
+        totalQuantity += object.items[i].quantity;
     }
     return (totalPrice / totalQuantity);
 }
+
 assert(getAverageSpentPerItem(shoppingCart), 1.333529411764706, "Exercise 100");
 addToDone("Exercise 100 is complete.")
 
@@ -1637,14 +1640,17 @@ addToDone("Exercise 100 is complete.")
 // Hint: Similarly to how we sometimes begin a function with setting a variable to zero, we need a starting place:
 // Hint: Consider creating a variable that is a object with the keys "price" and "quantity" both set to 0. You can then compare each item's price and quantity total to the one from "most"
 function mostSpentOnItem(object){
-    var moneySpent = 0 ;
-    var item = '';
+    var objectWeWant = {
+        "title": "adsfas",
+        "price": 0,
+        "quantity": 0
+    } ;
     for (let i = 0; i < object.items.length; i++){
-        if (moneySpent <= ((object.items[i][1]) * (object.items[i][2]))){
-            item = object.items[i][0];
+        if ((object.items[i].price * object.items[i].quantity) > (objectWeWant.price * objectWeWant.quantity)){
+            objectWeWant = object.items[i]
         }
     }
-    return item;
+    return objectWeWant;
 }
 assert(mostSpentOnItem(shoppingCart), {
     "title": "chocolate",
