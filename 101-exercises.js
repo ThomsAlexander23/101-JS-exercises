@@ -1607,7 +1607,16 @@ addToDone("Exercise 100 is complete.")
 // Be sure to do this as programmatically as possible. 
 // Hint: Similarly to how we sometimes begin a function with setting a variable to zero, we need a starting place:
 // Hint: Consider creating a variable that is a object with the keys "price" and "quantity" both set to 0. You can then compare each item's price and quantity total to the one from "most"
-
+function mostSpentOnItem(object){
+    var moneySpent = 0 ;
+    var item = '';
+    for (let i = 0; i < object.items.length; i++){
+        if (moneySpent <= ((object.items[i][1]) * (object.items[i][2]))){
+            item = object.items[i][0];
+        }
+    }
+    return item;
+}
 assert(mostSpentOnItem(shoppingCart), {
     "title": "chocolate",
     "price": 0.75,
