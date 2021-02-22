@@ -759,7 +759,7 @@ addToDone("Exercise 50 is correct.")
 // Exercise 51
 // Write a function definition named second that takes in sequence and returns the second value of that sequence.
 function second(sequence){
-    return (sequence[1]);
+    return sequence[1];
 }
 assert(second("ubuntu"), "b", "Exercise 51");
 assert(second([1, 2, 3]), 2, "Exercise 51");
@@ -769,7 +769,7 @@ addToDone("Exercise 51 is correct.")
 
 // Exercise 52
 // Write a function definition named third that takes in sequence and returns the third value of that sequence.
-function second(sequence) {
+function third(sequence) {
     return (sequence[2]);
 }
 assert(third("ubuntu"), "u", "Exercise 52");
@@ -780,7 +780,7 @@ addToDone("Exercise 52 is correct.")
 
 // Exercise 53
 // Write a function definition named forth that takes in sequence and returns the forth value of that sequence.
-function second(sequence) {
+function forth(sequence) {
     return (sequence[3]);
 }
 assert(forth("ubuntu"), "n", "Exercise 53");
@@ -791,7 +791,7 @@ addToDone("Exercise 53 is correct.")
 
 // Exercise 54
 // Write a function definition named last that takes in sequence and returns the last value of that sequence.
-function second(sequence) {
+function last(sequence) {
     return (sequence[(sequence.length - 1)]);
 }
 assert(last("ubuntu"), "u", "Exercise 54");
@@ -828,7 +828,7 @@ addToDone("Exercise 56 is correct.")
 // Exercise 57
 // Write a function definition named firstAndSecond that takes in sequence and returns the first and second value of that sequence as an array
 function firstAndSecond(sequence){
-    return (sequence.slice(0,1));
+    return (sequence.slice(0,2));
 }
 
 assert(firstAndSecond([1, 2, 3, 4]), [1, 2], "Exercise 57");
@@ -840,7 +840,10 @@ addToDone("Exercise 57 is correct.")
 // Exercise 58
 // Write a function definition named firstAndLast that takes in sequence and returns the first and last value of that sequence as an array
 function firstAndLast(sequence){
-    return (sequence.slice(0).push(sequence.splice(3)));
+    var newSequence = [];
+    newSequence.push(sequence[0]);
+    newSequence.push(sequence[sequence.length-1]);
+    return newSequence;
 }
 assert(firstAndLast([1, 2, 3, 4]), [1, 4], "Exercise 58");
 assert(firstAndLast(["JS", "is", "awesome"]), ["JS", "awesome"], "Exercise 58");
@@ -851,10 +854,12 @@ addToDone("Exercise 58 is correct.")
 //
 // Exercise 59
 // Write a function definition named firstToLast that takes in sequence and returns the sequence with the first value moved to the end of the sequence.
-function firstToLast(sequence){
-    var first_letter = (sequence.slice(0))
-    return (sequence.push(first_letter));
-}
+function firstToLast(sequence) {
+    var firstIndex = sequence.shift();
+    sequence[sequence.length] = firstIndex;
+    return sequence;
+  }
+
 assert(firstToLast([1, 2, 3, 4]), [2, 3, 4, 1], "Exercise 59");
 assert(firstToLast(["JS", "is", "awesome"]), ["is", "awesome", "JS"], "Exercise 59");
 assert(firstToLast(["strawberry", "kiwi", "mango", "guava"]), ["kiwi", "mango", "guava", "strawberry"], "Exercise 59");
@@ -865,10 +870,11 @@ addToDone("Exercise 59 is correct.")
 // Exercise 60
 // Write a function definition named sumAll that takes in sequence of numbers and returns all the numbers added together.
 function sumAll(sequence) {
-    return (sequence.reduce(function (a, b) {
-        return b - a;
-    }, 0)
-);
+    var sum = 0;
+    for (let i = 0; i < sequence.length; i++){
+        sum += Number(sequence[i]);
+    }
+    return sum
 }
 
 assert(sumAll([1, 2, 3, 4]), 10, "Exercise 60");
@@ -882,8 +888,8 @@ addToDone("Exercise 60 is correct.")
 //  Write a function definition named mean that takes in sequence of numbers and returns the average value
 function mean(sequence) {
     var sum = 0;
-    for (let i = 0; i < sequenc.length; i++) {
-        sum += grades[i];
+    for (let i = 0; i < sequence.length; i++) {
+        sum += sequence[i];
     }
     return (sum/sequence.length);
 }
@@ -897,10 +903,14 @@ addToDone("Exercise 61 is correct.")
 // Exercise 62
 // Write a function definition named median that takes in sequence of numbers and returns the average value
 function median(sequence){
-    var mid = ((Math.floor(senquence.sort).length)/ 2)
-    var med = 
-    (sequence.length % 0) ?  med = sequence[mid] : med = (((sequence[mid]) + (sequence[mid - 1]))/ 2);
-    return med;
+    const mid = Math.floor(sequence.length/2);
+    sequence = sequence.sort();
+    if (sequence.length % 2 !== 0){
+        return sequence[mid];
+    }
+    else {
+        return ((sequence[mid-1] + sequence[mid]) / 2);
+    }
 }
 assert(median([1, 2, 3, 4, 5]), 3.0, "Exercise 62");
 assert(median([1, 2, 3]), 2.0, "Exercise 62");
@@ -912,8 +922,8 @@ addToDone("Exercise 62 is correct.")
 // Exercise 63
 // Write a function definition named maxMinusMin that takes in an array of numbers and returns the difference of the maximum minus theminimum.
 function maxMinusMin(sequence){
-    sequence = sequence.sort;
-    return (sequence[0] - sequence[(sequence.length-1)]);
+    sequence = sequence.sort();
+    return ((sequence[(sequence.length-1)]) - (sequence[0]));
 }
 assert(maxMinusMin([1, 2, 2, 8, 3, 4]), 7, "Exercise 63");
 assert(maxMinusMin([1, 1, 2, 3, 9]), 8, "Exercise 63");
@@ -924,10 +934,11 @@ addToDone("Exercise 63 is correct.")
 // Exercise 64
 // Write a function definition named productOfAll that takes in sequence of numbers and returns the product of multiplying all the numbers together
 function productOfAll(sequence) {
-    return (sequence.reduce(function (a, b) {
-            return a * b;
-        }, 0)
-    );
+    var total = sequence[0]; 
+    for (let i = 1; i < sequence.length; i++){
+        total *= sequence[i];
+    }
+    return total
 }
 assert(productOfAll([1, 2, 3]), 6, "Exercise 64");
 assert(productOfAll([3, 4, 5]), 60, "Exercise 64");
@@ -954,8 +965,8 @@ addToDone("Exercise 65 is correct.")
 
 // Exercise 66
 // Write a function definition named getSmallestNumber that takes in sequence of numbers and returns the smallest number.
-function getLowestNumber(sequence) {
-    var lowest = 0;
+function getSmallestNumber(sequence) {
+    var lowest = sequence[0];
     for (let i = 0; i < sequence.length; i++)
         (sequence[i] <= lowest) ? lowest = sequence[i] : lowest = lowest
     return (lowest)
@@ -972,9 +983,15 @@ addToDone("Exercise 66 is correct.")
 function onlyOddNumbers(sequence){
     var oddArray = [];
     var posArray = [];
-    for (let i = 0; i < sequence.length; i++)
-        ((sequence[i] % 2) === 1) ? oddArray.shift(sequence[i]) : posArray.shift(sequence[i])
-    return oddArray
+    for (let i = 0; i < sequence.length; i++){
+        if (isOdd(sequence[i])){
+            oddArray.push(sequence[i]);
+        }
+        else{
+           posArray.push(sequence[i]); 
+        }
+    }    
+    return oddArray;
 }
 
 assert(onlyOddNumbers([1, 2, 3]), [1, 3], "Exercise 67");
@@ -986,12 +1003,18 @@ addToDone("Exercise 67 is correct.")
 
 // Exercise 68
 // Write a function definition named onlyEvenNumbers that takes in sequence of numbers and returns the even numbers in an array.
-function onlyOddNumbers(sequence){
+function onlyEvenNumbers(sequence){
     var oddArray = [];
-    var evenArray = [];
-    for (let i = 0; i < sequence.length; i++)
-        ((sequence[i] % 2) === 1) ? oddArray.shift(sequence[i]) : evenArray.shift(sequence[i])
-    return evenArray
+    var posArray = [];
+    for (let i = 0; i < sequence.length; i++){
+        if (isOdd(sequence[i])){
+            oddArray.push(sequence[i]);
+        }
+        else{
+           posArray.push(sequence[i]); 
+        }
+    }    
+    return posArray;
 }
 assert(onlyEvenNumbers([1, 2, 3]), [2], "Exercise 68");
 assert(onlyEvenNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]), [-4, -2, 2, 4], "Exercise 68");
