@@ -1562,7 +1562,7 @@ addToDone("Exercise 97 is complete.")
 function totalNumberOfItems(object){
     var quantity = 0;
     for (let i = 0; i < object.items.length; i++){
-        quantity += object.items[2];
+        quantity += object.items[i][2];
     }
     return quantity;
 }
@@ -1577,7 +1577,7 @@ addToDone("Exercise 98 is complete.")
 function getAverageItemPrice(object){
     var price = 0;
     for (let i = 0; i < object.items.length; i++){
-        price += object.items[1];
+        price += object.items[i][1];
     }
     return (price/(object.items.length));
 }
@@ -1589,7 +1589,15 @@ addToDone("Exercise 99 is complete.")
 // Exercise 100
 // Write a function named getAverageSpentPerItem that takes in the shopping cart and returns the average of summing each item's quanties times that item's price.
 // Hint: You may need to set an initial total price and total total quantity to zero, then sum up and divide that total price by the total quantity
-
+function getAverageSpentPerItem(object){
+    var totalPrice = 0;
+    var totalQuantity = 0;
+    for (let i = 0; i < object.items.length; i++){
+        totalPrice += ((object.items[i][1]) * (object.items[i][2]));
+        totalQuantity += object.items[i][2];
+    }
+    return (totalPrice / totalQuantity);
+}
 assert(getAverageSpentPerItem(shoppingCart), 1.333529411764706, "Exercise 100");
 addToDone("Exercise 100 is complete.")
 
