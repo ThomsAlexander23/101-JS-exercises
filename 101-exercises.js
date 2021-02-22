@@ -887,7 +887,9 @@ addToDone("Exercise 61 is correct.")
 // Write a function definition named median that takes in sequence of numbers and returns the average value
 function median(sequence){
     var mid = ((Math.floor(senquence.sort).length)/ 2)
-    (sequence.length % 0) ? return sequence[mid] : return (((sequence[mid]) + (sequence[mid - 1]))/ 2);
+    var med = 
+    (sequence.length % 0) ?  sequence[mid] = med : (((sequence[mid]) + (sequence[mid - 1]))/ 2) = med;
+    return med;
 }
 assert(median([1, 2, 3, 4, 5]), 3.0, "Exercise 62");
 assert(median([1, 2, 3]), 2.0, "Exercise 62");
@@ -1021,7 +1023,8 @@ addToDone("Exercise 70 is correct.");
 // Write a function definition named hasEvens that takes in sequence of numbers and returns true if there are any even numbers in the sequence
 function hasEvens(sequence){
     for (let i = 0; i < sequence.length; i++)
-        ((sequence[i] % 2) === 0) ? return true :  false
+        ((sequence[i] % 2) === 0) ? true :  false;
+        return
 }
 assert(hasEvens([1, 2, 3]), true, "Exercise 71");
 assert(hasEvens([2, 5, 6]), true, "Exercise 71");
@@ -1051,7 +1054,8 @@ addToDone("Exercise 72 is correct.")
 // Write a function definition named hasOdds that takes in sequence of numbers and returns true if there are any odd numbers in the sequence
 function hasOdds(sequence){
     for (let i = 0; i < sequence.length; i++)
-        ((sequence[i] % 2) === 1) ? return true :  false
+        ((sequence[i] % 2) === 1) ? true :  false;
+        return
 }
 assert(hasOdds([1, 2, 3]), true, "Exercise 73");
 assert(hasOdds([2, 5, 6]), true, "Exercise 73");
@@ -1082,8 +1086,8 @@ function countNegatives(sequence){
     var count_Pos = 0;
     var count_Neg = 0;
     for (let i = 0; i < sequence.length; i++)
-        ((sequence[i] < 0) ? count_Neg += 1 : count_Pos += 1
-    return count_Neg
+        (sequence[i] < 0) ? count_Neg += 1 : count_Pos += 1;
+    return count_Neg;
 }
 assert(countNegatives([1, -2, 3]), 1, "Exercise 75");
 assert(countNegatives([2, -5, -6]), 2, "Exercise 75");
@@ -1097,7 +1101,7 @@ function countOdds(sequence){
     var count_Pos = 0;
     var count_Neg = 0;
     for (let i = 0; i < sequence.length; i++)
-        ((sequence[i] >= 0) ? count_Pos += 1 : count_Neg += 1
+        ((sequence[i] >= 0)) ? count_Pos += 1 : count_Neg += 1
     return count_Pos
 }
 assert(countPositives([1, -2, 3]), 2, "Exercise 76");
@@ -1118,7 +1122,7 @@ function onlyPositiveEvens(sequence){
         if (((sequence[i] >= 0) && ((sequence[i] % 2) === 0))){
             posEven.push(sequence[i]);
         }
-        else if ((((sequence[i] < 0) && ((sequence[i] % 2) === 1)){
+        else if ((((sequence[i] < 0) && ((sequence[i] % 2) === 1)))){
             negOdd.push(sequence[i]);
         }
         else if (((sequence[i] >= 0) && ((sequence[i] % 2) === 1))){
@@ -1147,7 +1151,7 @@ function onlyPositiveOdds(sequence){
         if (((sequence[i] >= 0) && ((sequence[i] % 2) === 0))){
             posEven.push(sequence[i]);
         }
-        else if ((((sequence[i] < 0) && ((sequence[i] % 2) === 1)){
+        else if ((((sequence[i] < 0) && ((sequence[i] % 2) === 1)))){
             negOdd.push(sequence[i]);
         }
         else if (((sequence[i] >= 0) && ((sequence[i] % 2) === 1))){
@@ -1176,7 +1180,7 @@ function onlyNegativeEvens(sequence){
         if (((sequence[i] >= 0) && ((sequence[i] % 2) === 0))){
             posEven.push(sequence[i]);
         }
-        else if ((((sequence[i] < 0) && ((sequence[i] % 2) === 1)){
+        else if ((((sequence[i] < 0) && ((sequence[i] % 2) === 1)))){
             negOdd.push(sequence[i]);
         }
         else if (((sequence[i] >= 0) && ((sequence[i] % 2) === 1))){
@@ -1205,7 +1209,7 @@ function onlyNegativeOdds(sequence){
         if (((sequence[i] >= 0) && ((sequence[i] % 2) === 0))){
             posEven.push(sequence[i]);
         }
-        else if ((((sequence[i] < 0) && ((sequence[i] % 2) === 1)){
+        else if ((((sequence[i] < 0) && ((sequence[i] % 2) === 1)))){
             negOdd.push(sequence[i]);
         }
         else if (((sequence[i] >= 0) && ((sequence[i] % 2) === 1))){
@@ -1228,7 +1232,7 @@ addToDone("Exercise 80 is correct.")
 function shortestString(sequence){
     var stirng = ""
     for (let i = 0; i < sequence.largest; i++)
-        (sequence[i] <= sequence[i+1]) ? (string = (sequence[i]) : string = string
+        (sequence[i] <= sequence[i+1]) ? (string = (sequence[i])) : string = string
     return string;
 }
 assert(shortestString(["kiwi", "mango", "strawberry"]), "kiwi", "Exercise 81");
@@ -1242,7 +1246,7 @@ addToDone("Exercise 81 is correct.")
 function longestString(sequence){
     var stirng = ""
     for (let i = 0; i < sequence.largest; i++)
-        (sequence[i] >= sequence[i+1]) ? (string = (sequence[i]) : string = string
+        (sequence[i] >= sequence[i+1]) ? (string = (sequence[i])) : string = string
     return string;
 }
 assert(longestString(["kiwi", "mango", "strawberry"]), "strawberry", "Exercise 82");
