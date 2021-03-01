@@ -170,7 +170,7 @@ var negativeOddNumber = randomNegativeOddNumber();
 // Example function defintion:
 // Write a sayHello function that adds the string "Hello, " to the beginning and "!" to the end of any given input.
 function sayHello(name) {
-    return "Hello, " + name + "!";
+    return `"Hello, ${name}!"`;
 }
 
 assert(sayHello("Jane"), "Hello, Jane!");
@@ -196,7 +196,7 @@ assert(plusTwo(0), 2, "zero plus 2 is two")
 // Write a function definition for a function named addOne that takes in a number and returns that number plus one
 
 function addOne(number){
-    return (number = number += 1);
+    return (number += 1);
 }
 assert(addOne(2), 3, "Exercise 11");
 assert(addOne(0), 1, "Exercise 11");
@@ -231,7 +231,7 @@ addToDone("Exercise 12 is correct.")
 // Exercise 13
 // Write a function definition named isNegative that takes in a number and returns true or False if that number is negative.
 function isNegative(number) {
-   return (number = (number < 0));
+   return (number < 0);
 }
 assert(isNegative(positiveOddNumber), false, "Exercise 13");
 assert(isNegative(positiveEvenNumber), false, "Exercise 13");
@@ -243,7 +243,7 @@ addToDone("Exercise 13 is correct.")
 // Exercise 14
 // Write a function definition named isOdd that takes in a number and returns true or false if that number is odd.
 function isOdd(number){
-    return ((number % 2) === 1) || ((number % 2) === -1);
+    return ((Math.abs(number) % 2) === 1);
 }
 assert(isOdd(positiveOddNumber), true, "Exercise 14");
 assert(isOdd(positiveEvenNumber), false, "Exercise 14");
@@ -254,7 +254,7 @@ addToDone("Exercise 14 is correct.")
 // Exercise 15
 // Write a function definition named isEven that takes in a number and returns true or false if that number is even.
 function isEven(number){
-    return (number = ((number % 2) === 0));
+    return (number % 2) === 0;
 }
 assert(isEven(2), true, "Exercise 15");
 assert(isEven(positiveOddNumber), false, "Exercise 15");
@@ -295,7 +295,7 @@ addToDone("Exercise 17 is correct.")
 // Exercise 18
 // Write a function definition named isPositiveEven that takes in a number and returns true or false if the value is both greater than zero and even
 function isPositiveEven(number){
-    return ((isPositive(number)) && (isEven(number)));
+    return (isPositive(number)) && (isEven(number));
 }
 assert(isPositiveEven(4), true, "Exercise 18" );
 assert(isPositiveEven(positiveOddNumber), false, "Exercise 18");
@@ -308,7 +308,7 @@ addToDone("Exercise 18 is correct.")
 // Exercise 19
 // Write a function definition named isNegativeOdd that takes in a number and returns true or false if the value is both less than zero and odd.
 function isNegativeOdd(number){
-    return ((isNegative(number)) && (isOdd(number)));
+    return (isNegative(number)) && (isOdd(number));
 }
 assert(isNegativeOdd(-3), true, "Exercise 19" );
 assert(isNegativeOdd(positiveOddNumber), false, "Exercise 19");
@@ -321,7 +321,7 @@ addToDone("Exercise 19 is correct.")
 // Exercise 20
 // Write a function definition named isNegativeEven that takes in a number and returns true or false if the value is both less than zero and even.
 function isNegativeEven(number){
-    return ((isNegative(number)) && (isEven(number)));
+    return (isNegative(number)) && (isEven(number));
 }
 assert(isNegativeEven(-4), true, "Exercise 20" );
 assert(isNegativeEven(positiveOddNumber), false, "Exercise 20");
