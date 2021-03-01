@@ -170,7 +170,7 @@ var negativeOddNumber = randomNegativeOddNumber();
 // Example function defintion:
 // Write a sayHello function that adds the string "Hello, " to the beginning and "!" to the end of any given input.
 function sayHello(name) {
-    return `"Hello, ${name}!"`;
+    return `Hello, ${name}!`;
 }
 
 assert(sayHello("Jane"), "Hello, Jane!");
